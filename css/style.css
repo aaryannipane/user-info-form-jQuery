@@ -1,0 +1,40 @@
+
+.popup-open::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
+
+.pop-container{
+    z-index: 2;
+    
+}
+
+#popup-data-container{
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+
+.input-validation-error {
+    background-color: #f2dede;
+    border-color: #b94a48;
+}
+.input-validation-error:focus{
+    background-color: #f2dede;
+    border-color: #b94a48;
+}
+
+.iti{
+    width: 100%;
+}
+.iti__tel-input{
+    width: 100%;
+}
+

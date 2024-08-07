@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User detail form</title>
+
+    <!-- import bootstrap styles -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+
+
+    <link rel="stylesheet" href="./css/intlTelInput.min.css">
+
+    <!-- importing jquery js -->
+    <script src="./js/jquery.min.js" defer></script>
+    <!-- Include intl-tel-input JS -->
+    <script src="./js/intlTelInput.min.js" defer></script>
+    <script src="./js/intlTelInputWithUtils.min.js" defer></script>
+    <script src="./js/utils.js" defer></script>
+
+    <!-- custom js -->
+    <script src="./js/index.js" defer></script>
+
+
+</head>
+
+<body>
+    <h1 class="text-center my-5">Details Form</h1>
+
+
+    <div class="container border">
+        <div class="d-flex">
+            <div class="left-container w-50 p-2">
+                <div class="input-container mb-3">
+                    <label for="clientCompanyName">Client Company Name<span class="text-danger">*</span></label>
+                    <input type="text" id="clientCompanyName" class="form-control mt-1"
+                        placeholder="Client Company Name" name="Client Company Name">
+                    <span class="error-message d-none  small text-danger">message</span>
+                </div>
+                <div class="input-container mb-3">
+                    <label for="username">Username<span class="text-danger">*</span></label>
+                    <input type="text" id="username" class="form-control mt-1" placeholder="Username" name="Username">
+                    <span class="error-message d-none small text-danger">message</span>
+                </div>
+                <div class="input-container mb-3">
+                    <label for="phone">Contact Phone<span class="text-danger">*</span></label><br>
+                    <!-- <input id="phone2" type="tel"> -->
+                    <input id="phone" type="tel" class="form-control" name="Phone">
+                    <span id="valid-msg" class="d-none text-success">✓ Valid</span>
+                    <span id="error-msg" class="d-none text-danger small"></span>
+                    <span class="error-message d-none small text-danger">message</span>
+                </div>
+                <div class="input-container mb-3 d-flex column-gap-3">
+                    <div class="date-container d-flex flex-column w-50">
+                        <label for="startDate">Contract Start Date<span class="text-danger">*</span></label>
+                        <input type="date" name="Contract Start Date" id="startDate" class="form-control">
+                        <span class="error-message d-none small text-danger">message</span>
+                    </div>
+                    <div class="date-container d-flex flex-column w-50">
+                        <label for="endDate">Contract End Date<span class="text-danger">*</span></label>
+                        <input type="date" name="Contract End Date" id="endDate" class="form-control" disabled>
+                        <span class="error-message d-none small text-danger">message</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="right-container w-50 p-2">
+                <div class="input-container mb-3">
+                    <label for="email">Contact Email<span class="text-danger">*</span></label>
+                    <input type="email" id="email" class="form-control mt-1" name="Contact Email"
+                        placeholder="Contact Email">
+                    <span class="error-message d-none small text-danger">message</span>
+                </div>
+                <div class="input-container mb-3">
+                    <label for="domainNames">Domain Name(s)<span class="text-danger">*</span></label>
+                    <div class="input-group mt-1">
+                        <input type="text" id="domainNames" class="form-control"
+                            placeholder="Enter domain name (e.g. 'domainname.com')" name="Domain Name">
+                        <button class="btn btn-outline-secondary" id="addDomainBtn">+</button>
+                    </div>
+                    <span class="error-message d-none small text-danger">message</span>
+                    <div class="p-2 domain-container mt-1 d-flex gap-2 flex-wrap justify-content-start">
+
+                    </div>
+                </div>
+                <div class="input-container mb-3">
+                    <label for="gender">Gender<span class="text-danger">*</span></label>
+                    <div class="d-flex column-gap-2 ">
+
+                        <div class="radio-container">
+                            <input type="radio" id="male" name="gender">
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="radio-container">
+                            <input type="radio" id="female" name="gender">
+                            <label for="female">Female</label>
+                        </div>
+                    </div>
+                    <span class="error-message d-none small text-danger" id="genderErrorMessage">message</span>
+                </div>
+            </div>
+        </div>
+        <div class="p-2">
+            <span>Which of the following services are you interested in contracting for?<span
+                    class="text-danger">*</span>
+            </span><br>
+            <span class="error-message d-none small text-danger">message</span>
+            <div class="check-boxes d-flex flex-wrap">
+                <div class="check-contianer p-1 w-25">
+                    <input type="checkbox" id="sd" class="check-box" value="Software development">
+                    <label for="sd">Software development</label>
+                </div>
+                <div class="check-contianer p-1 w-25">
+                    <input type="checkbox" value="Graphic design" class="check-box" id="gd">
+                    <label for="gd">Graphic design</label>
+                </div>
+                <div class="check-contianer p-1 w-25">
+                    <input type="checkbox" value="Content writing" class="check-box" id="cw">
+                    <label for="cw">Content writing</label>
+                </div>
+                <div class="check-contianer p-1 w-25">
+                    <input type="checkbox" value="Marketing and advertising" class="check-box" id="ma">
+                    <label for="ma">Marketing and advertising</label>
+                </div>
+                <div class="check-contianer p-1 w-25">
+                    <input type="checkbox" value="Data entry and administrative support" class="check-box" id="das">
+                    <label for="das">Data entry and administrative support</label>
+                </div>
+                <div class="check-contianer p-1 w-25">
+                    <input type="checkbox" value="Customer service and support" class="check-box" id="css">
+                    <label for="css">Customer service and support</label>
+                </div>
+                <div class="check-contianer p-1 w-25">
+                    <input type="checkbox" value="Event planning and management" class="check-box" id="epm">
+                    <label for="epm">Event planning and management</label>
+                </div>
+                <div class="check-contianer p-1 w-25">
+                    <input type="checkbox" value="Accounting and bookkeeping" class="check-box" id="ab">
+                    <label for="ab">Accounting and bookkeeping</label>
+                </div>
+                <div class="check-contianer p-1 w-25">
+                    <input type="checkbox" value="Web development and design" class="check-box" id="wd">
+                    <label for="wd">Web development and design</label>
+                </div>
+                <div class="check-contianer p-1 w-25">
+                    <input type="checkbox" value="Legal services" class="check-box" id="ls">
+                    <label for="ls">Legal services</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container text-end p-2">
+            <button class="btn btn-primary" id="saveBtn">SAVE</button>
+        </div>
+    </div>
+
+    <div class="pop-container rounded border w-25 position-fixed top-50 start-50 translate-middle p-3 bg-white   d-none"
+        id="popup">
+        <h1>Details</h1>
+        <hr class="border-black">
+        <div id="popup-data-container">
+
+        </div>
+        <hr class="border-black">
+        <div class="button-container mt-2 text-end">
+            <button class="btn btn-secondary" id="backBtn">back</button>
+            <button class="btn btn-success" id="confirmBtn">confirm</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
